@@ -30,7 +30,7 @@
 ## 📍 Progress Record
 |  | 백지윤 | 최근영 | 장재성 | 배민지 | 김동현 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| GitHub | [1234jienf](https://github.com/MinYeongPark) | [choikeunyoung](https://github.com/choikeunyoung) | [jaesung08](https://github.com/jaesung08) | [MJBae327](https://github.com/MJBae327) |[Chico0902](https://github.com/Chico0902) | 
+| GitHub | [1234jienf](https://github.com/1234jienf) | [choikeunyoung](https://github.com/choikeunyoung) | [jaesung08](https://github.com/jaesung08) | [MJBae327](https://github.com/MJBae327) |[Chico0902](https://github.com/Chico0902) | 
 | Language | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> |
 | Week 01</br>(24.01.11.) | ✅ | ✅ | ✅ | ✅ | ✅ |
 
