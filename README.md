@@ -41,6 +41,12 @@
 | 0문제 | ❌ <br/>(사유) |
 
 
+### 스터디 문제
+|  | 백지윤 | 최근영 | 장재성 | 배민지 | 김동현 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| Week 01</br>(24.01.11.) | [BOJ_안전영역_실버1](https://www.acmicpc.net/problem/2468) | [BOJ_오목_실버1](https://www.acmicpc.net/problem/2615) | [BOJ_종이의개수_실버2](https://www.acmicpc.net/problem/1780) | [BOJ_1로만들기_실버3](https://www.acmicpc.net/problem/1463) |[BOJ_최대힙_실버2](https://www.acmicpc.net/problem/11279) | 
+
+
 ## 📌 스터디 규칙
 - 매주 스터디 후 목요일 자정까지 각 한문제씩 총 5문제 선정 후, 카톡에 공유한다.
 - 각자 선정한 문제를 기준으로 문제 선정자가 문제에 대한 설명을 한 후, 풀이 공유를 진행한다.
