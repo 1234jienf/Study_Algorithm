@@ -33,7 +33,9 @@
 | GitHub | [1234jienf](https://github.com/1234jienf) | [choikeunyoung](https://github.com/choikeunyoung) | [jaesung08](https://github.com/jaesung08) | [MJBae327](https://github.com/MJBae327) |[Chico0902](https://github.com/Chico0902) | 
 | Language | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> |
 | Week 01</br>(24.01.11.) | 3 | 3 | 1 | 1 | 3 |
-| Week 02</br>(24.01.18.) |  |  |  |  |  |
+| Week 02</br>(24.01.18.) | 5 | 5 | 5 | 2 | 5 |
+| Week 03</br>(24.01.25.) |  |  |  |  |  |
+
 
 | 업로드 횟수 | 표기 |
 | :---: | :---: |
@@ -47,6 +49,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | Week 01</br>(24.01.11.) | [BOJ_안전영역_실버1](https://www.acmicpc.net/problem/2468) | [BOJ_오목_실버1](https://www.acmicpc.net/problem/2615) | [BOJ_종이의개수_실버2](https://www.acmicpc.net/problem/1780) | [BOJ_1로만들기_실버3](https://www.acmicpc.net/problem/1463) |[BOJ_최대힙_실버2](https://www.acmicpc.net/problem/11279) |
 | Week 02</br>(24.01.18.) | [PGS_가장 많이 받은 선물_2024 KAKAO WINTER](https://school.programmers.co.kr/learn/courses/30/lessons/258712) | [PGS_석유 시추_PCCP기출문제_2번](https://school.programmers.co.kr/learn/courses/30/lessons/250136) | [BOJ_크로스워드_실버2](https://www.acmicpc.net/problem/1706) | [BOJ_포도주 시식_실버1](https://www.acmicpc.net/problem/2156) |[BOJ_촌수계산_실버2](https://www.acmicpc.net/problem/2644) | 
+| Week 03</br>(24.01.25.) | [PGS_성격유형 검사하기_2022 KAKAO TECH INTERNSHIP](https://school.programmers.co.kr/learn/courses/30/lessons/118666) | [PGS_아날로그 시계_PCCP기출문제_3번](https://school.programmers.co.kr/learn/courses/30/lessons/250135) | [BOJ_정사각형으로 가리기_실버2](https://www.acmicpc.net/problem/1569) | [BOJ_본대 산책_실버1](https://www.acmicpc.net/problem/12849) |[BOJ_맥주 마시면서 걸어가기_골드5](https://www.acmicpc.net/problem/9205) | 
 
 
 ## 📌 스터디 규칙
