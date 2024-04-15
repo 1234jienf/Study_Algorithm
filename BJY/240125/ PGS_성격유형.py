@@ -71,7 +71,3 @@ def solution(survey, choices):
   else: 
     answer += 'N'
   return answer
-
-a = solution(["AN", "CF", "MJ", "RT", "NA"],[5, 3, 2, 7, 5])
-
-print(a)
