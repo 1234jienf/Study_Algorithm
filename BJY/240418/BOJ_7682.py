@@ -20,9 +20,55 @@
 ## 각 테스트 케이스마다 한 줄에 정답을 출력한다
 ## 가능할 경우 "valid", 불가능할 경우 "invalid"를 출력한다.
 
-lst = list(map(str,input()))
+def check(X,O,lst):
+    # 두 개의 합이 9일때 마지막 턴은 X여야함
+    if X + O == 9:
+        if O >= X:
+            print('invalid')
+            return
+        else:
+            print('valid')
+            return
+    cnt = 0
+    # 가로
+    for i in range(3):
+        if lst[i*3] == lst[i*3+1] == lst[i*3+2]:
+            if lst[i*3] != '.':
+                if (lst[i*3] == 'O' and O == X) or (lst[i*3] == 'X' and O < X):
+                    cnt += 1
+    
+    cnt = 0
+    # 세로
+    for i in range(3):
+        if lst[i] == lst[i+3] == lst[i+6]:
+            if lst[i] != '.':
+                if (lst[i] == 'O' and O == X) or (lst[i] == 'X' and O < X):
+                    cnt += 1
+    if cnt == 1:
+        print('valid')
+        return
+    cnt = 0
+    # 대각선
+    if lst[0] == lst[4] == lst[8]:
+        if lst[0] != '.':
+            if (lst[0] == 'O' and O == X) or (lst[0] == 'X' and O < X):
+                cnt += 1
+                
+    if lst[2] == lst[4] == lst[6]:
+        if lst[0] != '.':
+            if (lst[0] == 'O' and O == X) or (lst[0] == 'X' and O < X):
+                cnt += 1
+    if cnt == 1:
+        print('valid')
+        return
+    print('invalid')
+    return
+    
+
+
 
 while True:
+    lst = list(map(str,input()))
     if len(lst) == 3:
         break
     
@@ -36,11 +82,6 @@ while True:
     ### 개수 체크
     if abs(X_num - O_num) > 1:
         print('invalid')
-        break
-    if X_num + O_num == 9:
-        if X_num < O_num:
-            print('invalid')
-            break
     else:
-        print('valid')
-        break
+        check(X_num,O_num,lst)
+        
