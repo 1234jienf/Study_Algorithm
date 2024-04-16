@@ -35,9 +35,15 @@
 | Week 01</br>(24.01.11.) | 3 | 3 | 1 | 1 | 3 |
 | Week 02</br>(24.01.18.) | 5 | 5 | 5 | 2 | 5 |
 | Week 03</br>(24.01.25.) | 1 | 1 | 1 | 1 | 1 |
-| Week 04</br>(24.04.18.) |  |  |  |  |  |
 
 
+***
+
+|  | 백지윤 | 최근영 | 
+| :---: | :---: | :---: |
+| GitHub | [1234jienf](https://github.com/1234jienf) | [choikeunyoung](https://github.com/choikeunyoung) |
+| Language | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> |
+| Week 04</br>(24.04.18.) |  |  | 
 
 | 업로드 횟수 | 표기 |
 | :---: | :---: |
