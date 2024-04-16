@@ -57,7 +57,7 @@
 
 |  | 백지윤 | 최근영 | 
 | :---: | :---: | :---: | 
-| Week 04</br>(24.04.18.) | [BOJ_안전영역_실버1](https://www.acmicpc.net/problem/2468) | [BOJ_오목_실버1](https://www.acmicpc.net/problem/2615) | 
+| Week 04</br>(24.04.18.) | [BOJ_틱택토_골드5](https://www.acmicpc.net/problem/7682), [BOJ_인구이동_골드4](https://www.acmicpc.net/problem/16234) | [BOJ_오목_실버1](https://www.acmicpc.net/problem/2615) | 
 
 ## 📌 스터디 규칙
 - 매주 스터디 후 목요일 자정까지 각 한문제씩 총 5문제 선정 후, 카톡에 공유한다.
