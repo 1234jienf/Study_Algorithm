@@ -20,49 +20,89 @@
 ## 각 테스트 케이스마다 한 줄에 정답을 출력한다
 ## 가능할 경우 "valid", 불가능할 경우 "invalid"를 출력한다.
 
-def check(X,O,lst):
-    # 두 개의 합이 9일때 마지막 턴은 X여야함
-    if X + O == 9:
-        if O >= X:
-            print('invalid')
-            return
-        else:
-            print('valid')
-            return
-    cnt = 0
-    # 가로
-    for i in range(3):
-        if lst[i*3] == lst[i*3+1] == lst[i*3+2]:
-            if lst[i*3] != '.':
-                if (lst[i*3] == 'O' and O == X) or (lst[i*3] == 'X' and O < X):
-                    cnt += 1
-    
-    cnt = 0
-    # 세로
-    for i in range(3):
-        if lst[i] == lst[i+3] == lst[i+6]:
-            if lst[i] != '.':
-                if (lst[i] == 'O' and O == X) or (lst[i] == 'X' and O < X):
-                    cnt += 1
-    if cnt == 1:
-        print('valid')
-        return
-    cnt = 0
-    # 대각선
-    if lst[0] == lst[4] == lst[8]:
-        if lst[0] != '.':
-            if (lst[0] == 'O' and O == X) or (lst[0] == 'X' and O < X):
-                cnt += 1
-                
-    if lst[2] == lst[4] == lst[6]:
-        if lst[0] != '.':
-            if (lst[0] == 'O' and O == X) or (lst[0] == 'X' and O < X):
-                cnt += 1
-    if cnt == 1:
-        print('valid')
-        return
-    print('invalid')
-    return
+
+## 첫번째 풀이 - 그냥 일차원 배열에서 경우 다 때려박아서 하기 -> 예외가 너무 많음..
+
+
+# def is_winner(X,O,lst):
+#     O_win = 0
+#     X_win = 0
+#     # 가로
+#     for i in range(3):
+#         if lst[i*3] == lst[i*3+1] == lst[i*3+2]:
+#             ## 승리자가 O일 때
+#             if lst[i*3] == 'O':
+#                 O_win += 1
+#             elif lst[i*3] == 'X':
+#                 X_win += 1    
+#     if O_win != 0 or X_win != 0:
+#         if X_win + O_win == 1:
+#             print('valid')
+#             return
+#         else:
+#             print('invalid')
+#             return
+#     else:
+#         # 세로
+#         for i in range(3):
+#             if lst[i] == lst[i+3] == lst[i+6]:
+#                 if lst[i] == 'O':
+#                     O_win += 1
+#                 elif lst[i] == 'X':
+#                     X_win += 1 
+#         if O_win != 0 or X_win != 0:
+#             if X_win + O_win == 1:
+#                 print('valid')
+#                 return
+#             else:
+#                 print('invalid')
+#                 return
+#         else:
+#             # 대각선
+#             for i in range(1,3):
+#                 if lst[4] == lst[4-2*i] == lst[4+2*i]:
+#                     if lst[i] == 'O':
+#                         O_win += 1
+#                     elif lst[i] == 'X':
+#                         X_win += 1
+#             if O_win != 0 or X_win != 0:
+#                 if X_win + O_win == 1:
+#                     print('valid')
+#                     return
+#                 else:
+#                     print('invalid')
+#                     return
+#     ## 9개 -> 아무 조건에도 걸리지 않으면, valid
+#     ## 9개 이하인데, 아무 조건에도 걸리지 않으면, invalid
+#     if X+O == 9:
+#         print('vaild')
+#         return
+#     else:
+#         print('invalid')
+#         return
+
+## 두번째 풀이 -> 2차원 배열안에서 정돈 해서, check 함수 돌기 전에 경우 처리 해준 후, 최종 상태인지 아닌지 검증하기
+def check(arr,winner):
+    # 가료 비교
+    if arr[0][0]==arr[0][1]==arr[0][2]==winner:
+        return True
+    if arr[1][0]==arr[1][1]==arr[1][2]==winner:
+        return True
+    if arr[2][0]==arr[2][1]==arr[2][2]==winner:
+        return True
+    # 세로 비교
+    if arr[0][0]==arr[1][0]==arr[2][0]==winner:
+        return True
+    if arr[0][1]==arr[1][1]==arr[2][1]==winner:
+        return True
+    if arr[0][2]==arr[1][2]==arr[2][2]==winner:
+        return True
+    # 대각선 비교
+    if arr[0][0]==arr[1][1]==arr[2][2]==winner:
+        return True
+    if arr[2][0]==arr[1][1]==arr[0][2]==winner:
+        return True
+    return False
     
 
 
@@ -74,14 +114,33 @@ while True:
     
     X_num = 0
     O_num = 0
-    for i in lst:
-        if i == 'X':
-            X_num += 1
-        elif i == 'O':
-            O_num += 1
+    idx = 0
+    arr=[[0]*3 for _ in range(3)]
+    for i in range(3):
+         for j in range(3):
+            arr[i][j]=lst[idx]
+            if lst[idx]=="X":
+                X_num+=1
+            if lst[idx]=="O":
+                O_num+=1
+            idx+=1
     ### 개수 체크
-    if abs(X_num - O_num) > 1:
+    if X_num > O_num+1:
         print('invalid')
-    else:
-        check(X_num,O_num,lst)
-        
+        continue
+    if O_num > X_num:
+        print('invalid')
+        continue
+    if O_num == X_num:
+        if check(arr,"O") and not check(arr,"X"):
+            print("valid")
+            continue
+    if O_num + 1 == X_num:
+        if check(arr,"X") and not check(arr,"O"):
+            print("valid")
+            continue
+    if X_num == 5 and O_num == 4:
+        if not check(arr,"O"):
+            print("valid")
+            continue
+    print("invalid")
