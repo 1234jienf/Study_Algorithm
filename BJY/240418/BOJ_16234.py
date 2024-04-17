@@ -27,3 +27,16 @@
 
 ## 인구 이동이 며칠 동안 발생하는지 첫째 줄에 출력한다.
 
+## N * N 크기의 맵, 인구차가 L이상 R이하
+N,L,R = map(int,input().split())
+
+arr=[list(map(int,input().split()))for _ in range(N)]
+
+visited = [(0*N) for _ in range(N)]
+
+dx= [0,0,1,-1]
+dy = [1,-1,0,0]
+
+# for i in range(N):
+#     for j in range(N):
+        
