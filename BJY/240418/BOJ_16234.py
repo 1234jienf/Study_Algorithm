@@ -28,15 +28,54 @@
 ## 인구 이동이 며칠 동안 발생하는지 첫째 줄에 출력한다.
 
 ## N * N 크기의 맵, 인구차가 L이상 R이하
+from collections import deque
+
 N,L,R = map(int,input().split())
 
 arr=[list(map(int,input().split()))for _ in range(N)]
 
-visited = [(0*N) for _ in range(N)]
 
 dx= [0,0,1,-1]
 dy = [1,-1,0,0]
 
-# for i in range(N):
-#     for j in range(N):
-        
+
+
+def bfs(ci,cj):
+    p_sum = arr[ci][cj] # 인구 합
+    alst = [(ci,cj)] # 연합에 든 나라
+    q = deque()
+    q.append((ci,cj))
+    visited[ci][cj] = 1
+    
+    while q:
+        now = q.popleft()
+        for k in range(4):
+            ni, nj = now[0] + dx[k], now[1] + dy[k]
+            # 영역 내, 미방문, 인구 차가 조건 만족
+            if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj] and L<= abs(arr[now[0]][now[1]] - arr[ni][nj]) <= R:
+                q.append((ni,nj))
+                alst.append((ni,nj))
+                p_sum += arr[ni][nj]
+                visited[ni][nj] = 1
+    if len(alst) > 1:     # 인구 이동 가능
+        number = len(alst)
+        for i in range(len(alst)):
+            con = alst.pop()
+            arr[con[0]][con[1]] = p_sum // number
+        return 1
+    return 0
+ans = 0
+while ans <= 2000:
+    flag = 0
+    visited = [([0]*N) for _ in range(N)]
+    for i in range(N):
+        for j in range(N):
+            if not visited[i][j]:
+                flag = max(flag, bfs(i,j))
+                
+    if flag == 0:
+        break
+    ans += 1
+
+
+print(ans)
