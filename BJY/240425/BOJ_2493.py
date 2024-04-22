@@ -34,26 +34,23 @@ N = int(input())
 top = list(map(int,input().split()))
 cnt = 0
 idx = [0] * N
-
 lst = []
-    
+
+
+# def check(n,m):
+#     for i in range(n, m):
+#         if v[i] != 1:
+#             continue
+#         else:
+#             return 1
+#     return 0
 for i in range(N):
-    if top[i] < top[i+1]:
-        lst.append((top[i],i))
-        lst.append((top[i+1],i+1))
-        continue
-    else:
-        for j in range(len(lst)):
-            if top[i+1] <= lst[len(lst)-j-1]:
-                idx[i+1] =  i+1 - j
-                lst = []
-                break
-        cnt += 1
-# for i in range(N-cnt):
-#     now_h = top[N-i-1]
-#     for j in range(N-cnt-i-1):
-#         if top[N-i-1-j-1] >= now_h:
-#             idx[N-i-1] = N-i-j-1
-#             break
+    while lst:
+        if top[lst[-1][0]] < top[i]:
+            lst.pop()
+        else:
+            idx[i] = lst[-1][0] + 1
+            break
+    lst.append((i,top[i]))
 
 print(*idx)
