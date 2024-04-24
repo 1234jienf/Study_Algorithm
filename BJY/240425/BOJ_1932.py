@@ -25,13 +25,18 @@
 
 n = int(input())
 tri_map= []
-print(tri_map)
 for i in range(n):
     row = list(map(int, input().split()))
     tri_map.append(row)
 
-dp = [0] * 500
-dp[0] = tri_map[0]
-
 for i in range(1,n):
-    dp[i] = dp[i]
+    for j in range(len(tri_map[i])):
+        if j == 0:
+            tri_map[i][j] += tri_map[i-1][j]
+        elif j == len(tri_map[i])-1:
+            tri_map[i][j] += tri_map[i-1][j-1]
+        else:
+            tri_map[i][j] += max(tri_map[i-1][j],tri_map[i-1][j-1])
+
+ans = max(tri_map[-1])
+print(ans)

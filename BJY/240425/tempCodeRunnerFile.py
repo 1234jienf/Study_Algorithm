@@ -66,8 +66,6 @@ while eat:
                   not_eat[ni][nj] = 0
                   check_n_2 += 1
                   res = cnt
-                else:
-                    continue
             else:
               eat.append([ni,nj,cnt])
               not_eat[ni][nj] = 0
