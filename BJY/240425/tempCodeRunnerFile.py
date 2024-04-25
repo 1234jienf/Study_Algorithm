@@ -60,14 +60,12 @@ while eat:
     for k in range(6):
         ni,nj,cnt = now[0] + di[k], now[1] + dj[k], now[2] + 1
         if 0 <= ni < N*H and 0 <= nj < M and not_eat[ni][nj] == 1 :
-            if k == 2 or k == 3:
+            if k == 3 or k == 4:
                 if ni // N == now[0] // N:
                   eat.append([ni,nj,cnt])
                   not_eat[ni][nj] = 0
                   check_n_2 += 1
                   res = cnt
-                else:
-                    continue
             else:
               eat.append([ni,nj,cnt])
               not_eat[ni][nj] = 0
