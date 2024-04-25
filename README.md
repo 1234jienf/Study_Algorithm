@@ -64,6 +64,7 @@
 | :---------------------: | :-------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
 | Week 04</br>(24.04.18.) | [BOJ\_틱택토\_골드5](https://www.acmicpc.net/problem/7682), [BOJ\_인구이동\_골드4](https://www.acmicpc.net/problem/16234) | [BOJ*빌런*호석\_골드5](https://www.acmicpc.net/problem/22251), [BOJ*비슷한*단어\_골드4](https://www.acmicpc.net/problem/2179) |
 | Week 05</br>(24.04.25.) | [BOJ\_탑\_골드5](https://www.acmicpc.net/problem/2493), [BOJ\_빗물\_골드5](https://www.acmicpc.net/problem/14719) | [BOJ\_정수 삼각형\_실버1](https://www.acmicpc.net/problem/1932), [BOJ\_토마토_골드5](https://www.acmicpc.net/problem/7569) |
+| Week 06</br>(24.05.02.) | [BOJ\_몬스터를 처치하자!\_골드5](https://www.acmicpc.net/problem/20008), [BOJ\_지름길\_실버1](https://www.acmicpc.net/problem/1446) | [BOJ\_정수 삼각형\_실버1](https://www.acmicpc.net/problem/1932), [BOJ\_토마토_골드5](https://www.acmicpc.net/problem/7569) |
 
 ## 📌 스터디 규칙
 
