@@ -41,8 +41,9 @@
 | :---------------------: | :----------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: |
 |         GitHub          |                               [1234jienf](https://github.com/1234jienf)                                |                           [choikeunyoung](https://github.com/choikeunyoung)                            |
 |        Language         | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> |
-| Week 04</br>(24.04.18.) |                                                   2️⃣                                                   |                                                   2️⃣                                                   |
-| Week 05</br>(24.04.25.) |                                                                                                        |                                                                                                        |
+| Week 04</br>(24.04.18.) |                                                   2️⃣                                                   |                                                   2️⃣                                                  |
+| Week 05</br>(24.04.25.) |                                                   4️⃣                                                   |                                                   4️⃣                                                  |
+| Week 06</br>(24.05.02.) |                                                                                                         |                                                                                                       |
 
 | 업로드 횟수 |       표기        |
 | :---------: | :---------------: |
