@@ -22,28 +22,38 @@
 
 # 몬스터를 처치하는 데 걸리는 최소 시간을 출력한다.
 
+
+#### 순열 함수 사용
+from itertools import permutations
 N, HP = map(int,input().split())
 s_lst = []
 for i in range(N):
   C, D = map(int,input().split())
   s_lst.append((C,D))
 
-s_lst.sort(key = lambda x: -x[1])
+# s_lst.sort(key = lambda x: -x[1])
+
+s_lst_per = list(permutations(s_lst,N))
+print(s_lst_per)
 cool_t = [0]*N
 # print(s_lst)
 ans = 0
 cnt = 0
+
+def ans_check(lst,ans):
+  return
 while cnt < HP:
-  for i in range(N):
-    if cool_t[i] == 0:
-      cool_t[i] = s_lst[i][0]
-      cnt += s_lst[i][1]
-      ans += 1
-      break
-    else:
-      cool_t[i] -= 1
-    if i == N-1:
-      ans += 1
+  for i in range(len(s_lst_per)):
+    ans = min(ans,ans_check(s_lst_per[i],ans))
+    # if cool_t[i] == 0:
+    #   cool_t[i] = s_lst[i][0]
+    #   cnt += s_lst[i][1]
+    #   ans += 1
+    #   break
+    # else:
+    #   cool_t[i] -= 1
+    # if i == N-1:
+    #   ans += 1
       
 
 print(ans)
