@@ -30,7 +30,51 @@
 
 ## 출력
 
-#여러분은 토마토가 모두 익을 때까지 최소 며칠이 걸리는지를 계산해서 출력해야 한다
+# 여러분은 토마토가 모두 익을 때까지 최소 며칠이 걸리는지를 계산해서 출력해야 한다
 
 # 만약, 저장될 때부터 모든 토마토가 익어있는 상태이면 0을 출력해야 하고, 
 #  토마토가 모두 익지는 못하는 상황이면 -1을 출력해야 한다.
+
+from collections import deque
+M, N, H = map(int,input().split())
+ 
+tomato_box = [list(map(int,input().split())) for _ in range(N*H)]
+
+di = [0,0,1,-1,N,-N]
+dj = [1,-1,0,0,0,0]
+
+eat = deque()
+not_eat = [([0] * M) for _ in range(N*H)]
+check_n = 0
+for i in range(N*H):
+    for j in range(M):
+        if tomato_box[i][j] == 1:
+            eat.append([i,j,0])
+        elif tomato_box[i][j] == 0:
+            not_eat[i][j] = 1
+            check_n += 1
+res = 0
+check_n_2 = 0
+while eat:
+    now = eat.popleft()
+    for k in range(6):
+        ni,nj,cnt = now[0] + di[k], now[1] + dj[k], now[2] + 1
+        if 0 <= ni < N*H and 0 <= nj < M and not_eat[ni][nj] == 1 :
+            if k == 2 or k == 3:
+                if ni // N == now[0] // N:
+                  eat.append([ni,nj,cnt])
+                  not_eat[ni][nj] = 0
+                  check_n_2 += 1
+                  res = cnt
+                else:
+                    continue
+            else:
+              eat.append([ni,nj,cnt])
+              not_eat[ni][nj] = 0
+              check_n_2 += 1
+              res = cnt 
+
+if check_n == check_n_2:
+    print(res)
+else:
+    print(-1)
