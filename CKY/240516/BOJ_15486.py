@@ -12,8 +12,6 @@ for _ in range(N):
 dp[1] = work_list[0][1]
 
 for i in range(1,N+1):
-    for j in range(i,i+work_list[i-1][0]):
-        if j < N:
-            dp[j] = max(dp[j-i], work_list[j][1])
+     
 
 print(dp)
