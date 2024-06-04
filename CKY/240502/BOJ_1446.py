@@ -2,14 +2,15 @@ import heapq
 
 N, D = map(int,input().split())
 
-road = [[] for _ in range(10001)]
-road_weight = [[10**9,i] for i in range(N+1)]
-start_road = []
+road_list = []
+road_weight = [0]*(D+1)
+
+for i in range(D+1):
+    road_weight[i] = i
 
 for _ in range(N):
-    S, E, W = map(int,input().split())
+    S, E, W = list(map(int,input().split()))
     if E <= D:
-        road[S].append((W,E))
         road_weight[S] = S - 0
 
 def dijkstra(start):
