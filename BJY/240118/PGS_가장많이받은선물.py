@@ -39,6 +39,7 @@ def solution(friends, gifts):
     present = [[0] * 2 for _ in range(len(friends))]
     answer = 0
     combi = list(combinations(friends,2))
+    print(combi)
     for gift in gifts:
         give, take = gift.split()
         ## 주고 받은 선물 개수 카운팅
@@ -65,6 +66,8 @@ def solution(friends, gifts):
                 continue
                 
     return max(answerlist)
+
+solution(friends = ["muzi", "ryan", "frodo", "neo"], gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"])
 #1. TC
 # friends = ["muzi", "ryan", "frodo", "neo"]
 # gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"]

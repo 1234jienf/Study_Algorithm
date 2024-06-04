@@ -1,9 +1,3 @@
-# word = list(map(str,input().strip().split(".")))
-
-# for wor in word[:-1]:
-#     wor = wor.strip()
-#     print(f"# {wor}.")
-
 import heapq
 
 N, D = map(int,input().split())
@@ -16,6 +10,7 @@ for _ in range(N):
     S, E, W = map(int,input().split())
     if E <= D:
         road[S].append((W,E))
+        road_weight[S] = S - 0
 
 def dijkstra(start):
     q = []
@@ -32,4 +27,3 @@ def dijkstra(start):
             if cost < road_weight[i[0]][0]:
                 road_weight[i[0]][0] = cost
                 road_weight[i[0]][0] = now
-                
