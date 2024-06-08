@@ -39,3 +39,75 @@
 ## 문제가 없는 경우에는 OK를, 그 외의 경우에는 위의 형식대로 출력을 한다. 
 ## 만약 충돌이 여러 번 발생하는 경우에는 가장 먼저 발생하는 충돌을 출력하면 된다.
 
+# 가로 A , 세로 B
+A,B = map(int,input().split())
+arr = [[0] * A for _ in range(B)]
+# 로봇 N개
+N,M = map(int,input().split())
+# 방향 N,E,S,W
+#     0,1,2,3
+dx = [0,1,0,-1]
+dy = [1,0,-1,0]
+
+# 로봇 명령
+# 왼쪽 회전 :  0->3,3->2,2->1,1->0
+# 오른쪽 회전 : 0->1,1->2,2->3,3->0
+
+# 방향 - idx 연결
+dict_idx = {
+  'N': 0,
+  'E': 1,
+  'S': 2,
+  'W': 3
+}
+
+robot_loc = []
+robot = []
+for i in range(N):
+  x,y,d = input().split()
+  x, y = int(x), int(y)
+  robot.append([x,y,dict_idx[d]])
+
+
+commands = []
+for _ in range(M):
+    idx, order, cnt = input().split()
+    commands.append([int(idx) - 1, order, int(cnt)])
+
+# sum = 0
+# while sum != M:
+#   idx, order, cnt = map(int,input().split())
+#   now_d = robot[idx-1][2]
+#   now_x,now_y = robot[idx-1][0],robot[idx-1][1]
+#   for j in range(cnt):
+#     if order == 'F':
+#       next_x, next_y = now_x + dx[dict_idx[now_d]], now_y + dy[dict_idx[now_d]]
+#       if (next_x, next_y) in robot[]:
+
+
+def simulation():
+  for idx, order, cnt in commands:
+    for _ in range(cnt):
+      if order == 'L':
+        robot[idx][2] = (robot[idx][2] - 1) % 4
+      elif order == 'R':
+        robot[idx][2] = (robot[idx][2] + 1) % 4
+      elif order == 'F':
+        nx = robot[idx][0] + dx[robot[idx][2]]
+        ny = robot[idx][1] + dy[robot[idx][2]]
+
+        # 벽 충돌 확인
+        if nx < 1 or nx > A or ny < 1 or ny > B:
+          return f"Robot {idx + 1} crashes into the wall"
+        
+        # 다른 로봇과 충돌 확인
+        for j in range(N):
+          if j != idx and robot[j][0] == nx and robot[j][1] == ny:
+            return f"Robot {idx + 1} crashes into robot {j + 1}"
+                
+        # 위치 업데이트
+        robot[idx][0] = nx
+        robot[idx][1] = ny
+  return "OK"
+
+print(simulation())
