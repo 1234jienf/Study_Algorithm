@@ -1,3 +1,5 @@
+from pprint import pprint as print
+
 word_one = input()
 word_two = input()
 
@@ -27,4 +29,4 @@ for i in range(one_length+1):
     if LCS_matrix[j][i] > max_value:
         max_value = LCS_matrix[j][i]
 
-print(max_value)
+print(LCS_matrix)
