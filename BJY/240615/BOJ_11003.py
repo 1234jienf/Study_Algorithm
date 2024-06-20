@@ -25,8 +25,11 @@ for i in range(N):
   ## 최솟값을 찾는거니깐 큰 숫자는 필요가 없음
   while q and q[-1][0] > now[i]:
     q.pop()
+
+  ## 숫자, 인덱스 값
   q.append((now[i],i))
   ## 윈도우 범위를 벗어나면
   if q[0][1] <= i - L:
     q.popleft()
+
   print(q[0][0], end=' ')
