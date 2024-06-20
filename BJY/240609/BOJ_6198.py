@@ -52,7 +52,7 @@ result = 0
 for i in range(N):
   while lst and lst[-1][0] <= building[i]:
     now = lst.pop()
-    ans[now[1]] += i - now[1] -1
+    ans[now[1]] += i - now[1] - 1
   lst.append([building[i],i])
 
 for i in range(len(lst)):
