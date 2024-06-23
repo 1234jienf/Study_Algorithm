@@ -51,12 +51,11 @@
 | Week 09</br>(24.06.09.) |                                                   2️⃣                                                   |                                                   3️⃣                                                   |                                                  3️⃣                                                   |                                                   4️⃣                                                   |                                                   -                                                    |
 | Week 10</br>(24.06.15.) |                                                   4️⃣                                                   |                                                   -                                                    |                                                  4️⃣                                                   |                                                   7️⃣                                                   |                                                   -                                                    |
 
-이렇게 업데이트되었습니다.
-| 업로드 횟수 | 표기 |
+| 업로드 횟수 | 표기              |
 | ----------- | ----------------- |
-| 5문제 | ✅ |
-| 1~4문제 | 0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ |
-| 0문제 | ❌ (사유) |
+| 5문제       | ✅                |
+| 1~4문제     | 0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ |
+| 0문제       | ❌ (사유)         |
 
 ## 스터디 문제
 
@@ -80,8 +79,6 @@
 | Week 09</br>(24.06.09.) |                                                   [BOJ\_옥상정원꾸미기\_골드5](https://www.acmicpc.net/problem/6198)                                                    |                                                        [BOJ_LGS\_골드5](https://www.acmicpc.net/problem/9251)                                                         |               [PGS\_배달\_LV2](https://school.programmers.co.kr/learn/courses/30/lessons/12978?language=python3)                |                                          [BOJ\_컨베이어 벨트 위의 로봇\_골드5](https://www.acmicpc.net/problem/20055)                                          |   X    |
 | Week 10</br>(24.06.15.) |                      [BOJ\_택배배송\_골드5](https://www.acmicpc.net/problem/5972), [BOJ\_최솟값찾기\_플레5](https://www.acmicpc.net/problem/11003)                      |                        [BOJ_LCS2\_골드4](https://www.acmicpc.net/problem/9252),[BOJ\_후위표기식\_골드2](https://www.acmicpc.net/problem/1918)                         |       [BOJ\_팔\_실버1](https://www.acmicpc.net/problem/1105),[BOJ*문자열뽑기*골드3](https://www.acmicpc.net/problem/8913)       | [PGS\_이모티콘 할인 행사\_LV2](https://school.programmers.co.kr/learn/courses/30/lessons/150368),[BOJ*청소년상어*골드2](https://www.acmicpc.net/problem/19236) |   X    |
 | Week 11</br>(24.06.21.) |                 [BOJ\_녹색 옷 입은 애가 젤다지?\_골드4](https://www.acmicpc.net/problem/4485), [BOJ\_치즈\_골드3](https://www.acmicpc.net/problem/2638)                 |                                                                                   -                                                                                   | [BOJ\_게임개발\_골드3](https://www.acmicpc.net/problem/1516), [BOJ\_행렬의 부분합\_골드1](https://www.acmicpc.net/problem/2369) |                    [BOJ\_과일 탕후루\_실버2](https://www.acmicpc.net/problem/30804), [BOJ\_앱\_골드3](https://www.acmicpc.net/problem/7579)                    |   -    |
-
-이렇게 추가되었습니다.
 
 ## 📌 스터디 규칙
 
