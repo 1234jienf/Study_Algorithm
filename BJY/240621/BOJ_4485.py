@@ -30,6 +30,7 @@
 ## 출력
 
 ## 각 테스트 케이스마다 한 줄에 걸쳐 정답을 형식에 맞춰서 출력한다. 형식은 예제 출력을 참고하시오.
+
 import heapq
 import sys
 input = sys.stdin.readline
