@@ -43,15 +43,9 @@ for i in range(N):
   for j in range(M):
     for a in range(i,N):
       for b in range(j,M):
-        s_sum = D[a][b]
-        if i > 0:
-            s_sum -= D[i-1][b]
-        if j > 0:
-            s_sum -= D[a][j-1]
-        if i > 0 and j > 0:
-            s_sum += D[i-1][j-1]
+        s_sum = D[a][b] - D[a - 1][b] - D[a][b - 1] + D[i - 1][j - 1]
         if s_sum % K == 0:
-            cnt += 1
+          cnt += 1
     
 
 print(cnt)

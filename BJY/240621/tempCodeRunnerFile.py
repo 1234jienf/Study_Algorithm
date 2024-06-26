@@ -1,1 +1,1 @@
-strip
+        flag = 0
