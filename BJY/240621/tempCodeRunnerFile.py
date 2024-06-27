@@ -1,1 +1,1 @@
-        flag = 0
+    q.popleft()
