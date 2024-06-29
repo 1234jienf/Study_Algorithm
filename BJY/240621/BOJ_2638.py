@@ -51,7 +51,6 @@ def bfs(i,j):
 
 while flag == 0:
   flag = 1
-  ("도는 횟수")
   visited=[[0 for _ in range(M)] for _ in range(N)]
   bfs(0,0)
   ## 탐색이 모두 끝나면
