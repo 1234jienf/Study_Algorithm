@@ -12,3 +12,19 @@
 ## 중복되는 수열을 여러 번 출력하면 안되며, 각 수열은 공백으로 구분해서 출력해야 한다.
 
 ## 수열은 사전 순으로 증가하는 순서로 출력해야 한다.
+
+N, M = map(int,input().split())
+
+lst = []
+ans = []
+def dfs(n,s,lst):
+    if n == M:
+        ans.append(lst)
+        return
+    for j in range(s,N+1):
+        dfs(n+1,j+1,lst+[j])
+
+
+dfs(0,1,lst)
+for lst in ans:
+    print(*lst)
