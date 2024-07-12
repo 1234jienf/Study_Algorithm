@@ -25,3 +25,57 @@
 
 # 출력
 ## 첫째 줄에 게임이 몇 초에 끝나는지 출력한다.
+
+N = int(input())
+apple_n = int(input())
+apple_lst = []
+for _ in range(apple_n):
+  x, y = map(int,input().split())
+  apple_lst.append((x,y))
+L = int(input())
+d_lst = []
+for _ in range(L):
+  t,d = map(str,input().split())
+  d_lst.append((t,d))
+
+d_table = [0]*(10001)
+for sec,turn in d_lst:
+  d_table[int(sec)] = turn
+# 위 오른쪽 아래 왼쪽 
+di = [-1,0,1,0]
+dj = [0,1,0,-1]
+
+
+## 초기값 설정 
+dr = 1
+snake = [(1,1)]
+ans = 0
+
+while True:
+  ans += 1
+  ## 현재 머리의 좌표
+  ci,cj = snake[0]
+  ## 진행 방향으로 이동
+  ni,nj = ci+di[dr], cj+dj[dr] 
+  ## 벽에 부딪히거나 , 몸에 부딪힌 경우
+  if 1 <= ni <= N and 1 <= nj <= N and (ni,nj) not in snake:
+    ## 머리 위치에 이동좌표 넣기
+    snake.insert(0,(ni,nj))
+    if (ni,nj) in apple_lst:
+      ## 사과 제거
+      ## 꼬리는 제거 안함 = 늘어나니깐ㄴ
+      apple_lst.remove((ni,nj))
+    else:
+      ## 꼬리 부분 제거
+      snake.remove((snake[-1]))
+    ## 방향 전환
+    ## 우회전  
+    if d_table[ans] == 'D':
+      dr = (dr+1) % 4
+    elif d_table[ans] == 'L':
+      dr = (dr+3) % 4
+  # 종료
+  else:
+    break
+
+print(ans)
