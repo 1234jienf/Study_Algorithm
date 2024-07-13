@@ -45,3 +45,8 @@ for start in range(1, n+1):
         if totalLen == len(totalSet):
             ans += 1
 print(ans)
+# 1. bfs 돌면서 사이클 검출 (직전 노드와 헷갈리면 안됨)
+# 2. 검출한 사이클 set으로 저장
+# {1 2 3} {3 4 5} -> 3 + 3 = 6
+# {1 2 3 4 5} -> 5
+# 3. 중복 발생! -> 선인장 아님
