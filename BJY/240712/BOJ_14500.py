@@ -12,7 +12,6 @@
 ## 테트로미노는 반드시 한 정사각형이 정확히 하나의 칸을 포함하도록 놓아야 하며, 회전이나 대칭을 시켜도 된다.
 
 
-
 # 입력
 ## 첫째 줄에 종이의 세로 크기 N과 가로 크기 M이 주어진다. (4 ≤ N, M ≤ 500)
 ## 둘째 줄부터 N개의 줄에 종이에 쓰여 있는 수가 주어진다. i번째 줄의 j번째 수는 위에서부터 i번째 칸, 왼쪽에서부터 j번째 칸에 쓰여 있는 수이다. 입력으로 주어지는 수는 1,000을 넘지 않는 자연수이다.
@@ -21,3 +20,33 @@
 ## 첫째 줄에 테트로미노가 놓인 칸에 쓰인 수들의 합의 최댓값을 출력한다.
 
 
+def dfs(n, sm, tlst):
+    global ans
+    # 가지치기: 남은 값이 모두 mx여도 ans 갱신 못하는 경우
+    if sm + ( 4 - n ) * mx <= ans:
+        return
+
+    if n == 4:
+        ans = max(ans, sm)
+        return
+
+    for ci,cj in tlst:
+        for di, dj in ((-1,0),(1,0),(0,-1),(0,1)):
+            ni, nj = ci + di, cj + dj
+            if 0 <= ni < N and 0 <= nj < M and v[ni][nj] == 0:
+                v[ni][nj] = 1
+                dfs(n+1, sm+arr[ni][nj], tlst+[(ni,nj)])
+                v[ni][nj] = 0
+
+N, M = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(N)]
+v = [[0]*M for _ in range(N)]
+ans = 0
+mx = max(map(max,arr))
+
+for i in range(N):
+    for j in range(M):
+        v[i][j] = 1
+        dfs(1, arr[i][j], [(i,j)])
+
+print(ans)
