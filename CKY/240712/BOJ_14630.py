@@ -31,6 +31,7 @@ graph = [ []]
 for n in range(1,N+1):
     state = list(map(int,input().strip()))
     graph.append(state)
+print(graph)
 graph_length = len(graph[1])
 start, end = map(int,input().split())
 print(dijkstra(start,end))
