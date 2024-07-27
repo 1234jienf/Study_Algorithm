@@ -36,6 +36,21 @@ T = int(input())
 for tc in range(1,T+1):
   x, y = map(int,input().split())
   dist = y - x
-  max_d = math.floor(math.sqrt(dist))
+  ### 현재 이동하는 거리
+  move = 1 
+  ### 작동 횟수
+  ans = 0
+  ### 이동한 거리
+  now = 0
+
+  while now < dist:
+    ans += 1
+    now += move
+
+    if ans % 2 == 0:
+      move += 1
+  
+  print(ans)
+  
 
   
