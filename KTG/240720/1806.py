@@ -14,7 +14,7 @@ sys.stdin = open("./1806.txt", "r")
 N, S = map(int, input().split())
 arr = list(map(int, input().split()))
 
-if sum(arr) < S:
+if sum(arr) < S: # 어떻게 해도 합이 S 보다 작은 경우
     print(0)
     exit()
 
@@ -24,13 +24,15 @@ ans = N
 
 while left < N:
     if total < S:
-        if right == N -1:
+        if right == N - 1: # 오른쪽 포인터 이동
             break
         right += 1
         total += arr[right]
-    else:
+    else:  # 왼쪽 포인터 이동
         ans = min(ans, right - left)
         left += 1
         total -= arr[left]
 
 print(ans)
+
+# 질문 있?
