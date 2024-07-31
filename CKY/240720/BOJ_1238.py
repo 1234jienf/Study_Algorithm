@@ -37,5 +37,6 @@ for i in range(1,N+1):
                 answer[j] += distance[j]
     else:
         answer[i] += distance[X]
-
+    
+print(answer)
 print(max(answer))
