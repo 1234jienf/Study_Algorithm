@@ -46,3 +46,58 @@
 ## 추가해야 하는 가로선 개수의 최솟값을 출력한다. 
 ## 만약, 정답이 3보다 큰 값이면 -1을 출력한다. 또, 불가능한 경우에도 -1을 출력한다.
 
+N, M, H = map(int,input().split())
+
+
+def check():
+  for sj in range(1,N+1):
+    j = sj
+    for i in range(1,H+1):
+      ### 오른쪽으로 이동해야하는 경우
+      if arr[i][j] == 1:
+        j += 1
+      elif arr[i][j-1] == 1:
+        j -= 1
+    
+    if j != sj:
+      return 0
+  return 1
+
+def dfs(n,s):
+  global ans
+  if n == cnt:
+    if check() == 1:
+      ans = 1
+    return
+  for j in range(s, all):
+    ti,tj = pos[j]
+    ## 왼쪽 , 오른쪽 모두 검사
+    if arr[ti][tj-1] == 0 and arr[ti][tj+1]==0:
+      arr[ti][tj] = 1
+      dfs(n+1, j+1)
+      arr[ti][tj] = 0
+
+
+# 사다리 입력 받기
+arr = [[0]*(N+2) for _ in range(H+1)]
+for _ in range(M):
+  ti,tj = map(int,input().split())
+  arr[ti][tj] = 1
+
+pos = []
+for i in range(1, H+1):
+  for j in range(1, N+1):
+    if arr[i][j] == 0:
+      pos.append((i,j))
+all = len(pos)
+
+### 사다리 검사
+for cnt in range(4):
+  ans = 0
+  dfs(0,0)
+  if ans == 1:
+    ans = cnt
+    break
+else:
+  ans = -1
+print(ans)
