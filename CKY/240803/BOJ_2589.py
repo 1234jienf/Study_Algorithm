@@ -29,7 +29,6 @@ N, M = map(int,input().split())
 
 matrix = [ list(map(str,input())) for _ in range(N) ]
 
-
 max_value = 0
 
 for i in range(N):
