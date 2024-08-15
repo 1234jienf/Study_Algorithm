@@ -28,3 +28,50 @@
 # 출력
 ## 이동할 때마다 주사위의 윗 면에 쓰여 있는 수를 출력한다. 만약 바깥으로 이동시키려고 하는 경우에는 해당 명령을 무시해야 하며, 출력도 하면 안 된다.
 
+N,M,x,y,K = map(int,input().split())
+
+arr = [list(map(int,input().split())) for _ in range(N)]
+orders = list(map(int,input().split()))
+
+one,two,three,four,five,six = 0,0,0,0,0,0
+
+## 북쪽
+# 1,2,5,6 = 5,1,6,2
+## 남쪽
+# 1,2,5,6 = 2,6,1,5
+## 동쪽
+# 1,3,4,6 = 4,1,6,3
+## 서쪽
+# 1,3,4,6 = 3,6,1,4
+
+### 0 동(1) 서(2) 북(3) 남(4)
+dir = [(0,0),(0,1),(0,-1),(-1,0),(1,0)]
+
+def roll(si,sj):
+  one,two,three,four,five,six = 0,0,0,0,0,0
+  ci, cj = si, sj
+  for order in orders:
+    ni, nj = ci + dir[order][0], cj + dir[order][1]
+    ## 바깥인지 여부 검사
+    if 0 <= ni < N and 0 <= nj < M:
+      # 동쪽
+      if order == 1:
+        one,three,four,six = four,one,six,three
+      elif order == 2:
+        one, three, four, six = three, six, one, four
+      elif order == 3:
+        one, two, five, six = five, one, six, two
+      elif order == 4:
+        one, two, five, six = two, six, one, five
+      ## 숫자 베끼기
+      if arr[ni][nj] == 0:
+        # 0 이라면, 하단의 숫자로 변경
+        arr[ni][nj] = six
+      else:
+        # 0이 아니라면, 주사위가 그 수로 변경되고, 0으로 숫자 변경
+        six, arr[ni][nj] = arr[ni][nj], 0
+      print(one)
+      ci, cj = ni, nj
+
+
+roll(x,y)
