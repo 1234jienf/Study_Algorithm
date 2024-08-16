@@ -65,4 +65,3 @@ while q:
                 q.append((nr, nc, 1))
 else:
     print('IMPOSSIBLE')
-
