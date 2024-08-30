@@ -61,7 +61,7 @@ def calculate_score(order):
     # 각 이닝에 대해 점수 계산
     for ining in range(N):
         out = 0  # 아웃 카운트
-        bases = [0, 0, 0]  # 1루, 2루, 3루 상태 초기화
+        first, second, third = 0, 0, 0  # 1루, 2루, 3루 주자 상태
         
         # 3아웃이 될 때까지 공격
         while out < 3:
@@ -69,23 +69,23 @@ def calculate_score(order):
             if batter_result == 0:  # 아웃
                 out += 1
             elif batter_result == 1:  # 안타
-                ans += bases[2]  # 3루 주자 홈인
-                bases[2] = bases[1]  # 2루 주자 3루로
-                bases[1] = bases[0]  # 1루 주자 2루로
-                bases[0] = 1  # 타자는 1루로
+                ans += third  # 3루 주자 홈인
+                third = second  # 2루 주자 3루로
+                second = first  # 1루 주자 2루로
+                first = 1  # 타자는 1루로
             elif batter_result == 2:  # 2루타
-                ans += bases[2] + bases[1]  # 3루와 2루 주자 홈인
-                bases[2] = bases[0]  # 1루 주자 3루로
-                bases[1] = 1  # 타자는 2루로
-                bases[0] = 0  # 1루는 비어있음
+                ans += third + second  # 3루와 2루 주자 홈인
+                third = first  # 1루 주자 3루로
+                second = 1  # 타자는 2루로
+                first = 0  # 1루는 비어있음
             elif batter_result == 3:  # 3루타
-                ans += bases[2] + bases[1] + bases[0]  # 모든 주자 홈인
-                bases[2] = 1  # 타자는 3루로
-                bases[1] = 0  # 2루는 비어있음
-                bases[0] = 0  # 1루는 비어있음
+                ans += third + second + first  # 모든 주자 홈인
+                third = 1  # 타자는 3루로
+                second = 0  # 2루는 비어있음
+                first = 0  # 1루는 비어있음
             elif batter_result == 4:  # 홈런
-                ans += 1 + sum(bases)  # 타자와 모든 주자 홈인
-                bases = [0, 0, 0]  # 모든 루 비우기
+                ans += 1 + first + second + third  # 타자와 모든 주자 홈인
+                first, second, third = 0, 0, 0  # 모든 루 비우기
             
             # 다음 타자로 넘어감
             now = (now + 1) % 9
