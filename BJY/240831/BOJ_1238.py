@@ -21,7 +21,6 @@
 ## 첫 번째 줄에 N명의 학생들 중 오고 가는데 가장 오래 걸리는 학생의 소요시간을 출력한다.
 import heapq
 import sys
-from collections import deque
 
 N, M, X = map(int,input().split())
 arr = [[] for _ in range(N+1)]
@@ -65,7 +64,7 @@ to_X[X] = 0
 ### X번에서 가는 방법
 from_X = dijk(X)
 
-## 왕복 시간 계산
+## 왕복 시간 계산 
 result = 0
 for i in range(1,N+1):
   sum = to_X[i] + from_X[i]
