@@ -23,3 +23,13 @@ for i in range(1, N):
     heapq.heappush(pq, ti)
 
 print(len(pq))
+
+"""
+s1 e1
+hq: e1
+s2 e2
+hq: e1 e2
+s3 e3
+s3 <= e1
+hq: e3 e2
+"""
