@@ -70,9 +70,6 @@ def dfs(arr: list[list[int]], cnt: int):
                 ans = max(ans, value)
         return
 
-    if arr == [[0, 4, 8], [0, 2, 4], [0, 0, 0]]:
-        pass
-    print(arr)
     for i in range(4):
         dfs(merge(i, arr), cnt + 1)
 
