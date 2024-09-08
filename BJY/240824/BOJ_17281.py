@@ -94,6 +94,7 @@ def calculate_score(order):
 
 # 순열 만들기 (1번 선수는 항상 4번 타자로 고정)
 answer = 0
+
 for perm in itertools.permutations(number_team[1:]):  # 2번~9번 타자의 순열
     order = list(perm[:3]) + [1] + list(perm[3:])  # 4번 타자 자리에 1번 선수 고정
     answer = max(answer, calculate_score(order))
