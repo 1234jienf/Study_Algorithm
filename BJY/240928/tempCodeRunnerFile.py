@@ -12,31 +12,25 @@
 
 # 출력
 ## 좋은 수의 개수를 첫 번째 줄에 출력한다.
-N = int(input())
-lst = list(map(int, input().split()))  # 리스트 입력
-lst.sort()
 
+N = int(input())
+lst = list(map(int, input().split()))
 ans = 0
 
-for k in range(N):
-  target = lst[k]
-  left, right = 0, N-1
-
-  while left < right: 
-    if left == k:
-      left += 1
+dic = {}
+for i in range(N):
+  for j in range(i+1, N):
+    sum_two = lst[i] + lst[j]
+    if sum_two == lst[i] or sum_two == lst[j]:
       continue
-    if right == k:
-      right -= 1
-      continue
-  
-    sum_two = lst[left] + lst[right]
-    if sum_two == target:
-      ans += 1
-      break
-    elif sum_two < target:
-      left += 1
     else:
-      right -= 1
+      if sum_two not in dic:
+        dic[sum_two] = 1
+      else:
+        dic[sum_two] += 1
+
+for k in range(N):
+  if lst[k] in dic:
+    ans += 1
 
 print(ans)
