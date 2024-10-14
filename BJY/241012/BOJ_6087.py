@@ -101,7 +101,7 @@ def bfs_mirror(start,end):
   queue = []
   for i in range(4):  # 모든 방향에서 시작할 수 있도록 설정
     heapq.heappush(queue, (0, start[0], start[1], i))
- # 각 위치에서 방향별 최소 거울 개수를 저장하는 3차원 visited 배열
+  # 각 위치에서 방향별 최소 거울 개수를 저장하는 3차원 visited 배열
   visited = [[[float('inf')] * 4 for _ in range(W)] for _ in range(H)]
   for i in range(4):  # 시작 지점의 모든 방향 초기화
     visited[start[0]][start[1]][i] = 0
