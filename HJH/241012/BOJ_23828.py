@@ -32,6 +32,7 @@ def main():
     size = len(arr)
     print(arr)
     makeDP()
+    print(*dp, sep='\n')
     print(dp[size][m])
     
 
