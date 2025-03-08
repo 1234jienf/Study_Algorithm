@@ -29,7 +29,7 @@ MOD = 5000000
 # main
 n, k = map(int, input().split())
 arr = list(map(int, input().split()))
-trees = [[0] * (100001 * 2) for _ in range(k + 1)]
+trees = [[0] * 100001 for _ in range(k + 1)]
 
 for i, data in enumerate(arr):
     fw_add(trees[1], data, 1)
