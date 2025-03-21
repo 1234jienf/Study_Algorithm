@@ -7,14 +7,12 @@ n, q = map(int, input().split())
 parent = [int(input()) for _ in range(n-1)]
 parent.insert(0, 0)
 parent.insert(1, 1)
-color = [int(input()) for _ in range(n)]
-color.insert(0,0)
+sets = [set([int(input())]) for i in range(n)]
+sets.insert(0, None)
 
 queries = [tuple(map(int, input().split())) for _ in range(q + n - 1)]
 
 ans = deque()
-
-sets = [set([color[i]]) for i in range(n+1)]
 
 roots = [i for i in range(n+1)]
 
